@@ -1,22 +1,19 @@
-let blue = document.querySelectorAll(".cardsimg")
-let h4s = document.querySelectorAll(".cardsimg h4")
-blue.addEventListener("mousemove", function(){
-    h4s.style.color = "blue"
-})
-blue.addEventListener("mouseleave", function(){
-    h4s.style.color = "black"
-})
+function submitQuiz() {
+  let score = 0;
 
+  if (document.querySelector("input[name = 'q1']:checked ").value === "b") {
+    score++;
+  }
+  if (document.querySelector("input[name = 'q2']:checked ").value === "a") {
+    score++;
+  }
+  if (document.querySelector("input[name = 'q3']:checked ").value === "b") {
+    score++;
+  }
+  if (document.querySelector("input[name = 'q4']:checked ").value === "b") {
+    score++;
+  }
 
-
-
-// let heading1 = document.querySelector(".h51")
-// let heading2 = document.querySelector(".h52")
-// let imgfront = document.querySelector(".images")
-
-// heading1.addEventListener("click",function(){
-//     imgfront.style.display = "none"
-// })
-
-
-
+  let resultDiv = document.querySelector("#res_print")
+  resultDiv.innerHTML = score
+}
